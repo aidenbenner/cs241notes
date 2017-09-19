@@ -4,23 +4,23 @@
 
 
 Encoding integers with 32 bits
-- unsigned 0 to $2**32 - 1$
-- signed $2**31$ to $2 ** 31 - 1$
+- unsigned 0 to $2^32 - 1$
+- signed $2^31$ to $2^31 - 1$
 
 **2's compliment**
-Instead of regular binary numbers $$2**n * a_n, 2 ** n - 1, a_{n-1} ... 2 ** 0 n_{0}$$
-Flip the sign of the highest power of 2 like: $$-2**n * a_n, 2 ** n - 1, a_{n-1} ... 2 ** 0 n_{0}$$
+Instead of regular binary numbers $$2^n * a_n, 2^n - 1, a_{n-1} ... 2^0 n_{0}$$
+Flip the sign of the highest power of 2 like: $$-2^n * a_n, 2^n - 1, a_{n-1} ... 2^0 n_{0}$$
 
 Benefits of 2's compliment
 - each number has a unique bit representation
 - can add to positive numbers regularly
 
-- Hardware implements arithmetic mod $2 ** 32$
+- Hardware implements arithmetic mod $2^32$
 - Theorem: if $x \equiv x^` mod n$ $y \equiv y^`mod n$ then $x + y \equiv x^` + y^` mod n$
 - same to add, subtract, multiply
 - Need separate hardware for division
 
-- Memory, 32 bits with $2 ** 22$ addresses
+- Memory, 32 bits with $2^22$ addresses
 - CPU 34 registers with 32 bits per register
 - Next to the CPU is the Control Unit
     - Circuit that changes the bits based 
