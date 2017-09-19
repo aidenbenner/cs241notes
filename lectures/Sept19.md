@@ -77,6 +77,38 @@ Linking should give the same output as concating the assembled code
 (as long as we don't have constants that rely on offsets)
 
 ### Variables
+Def. A **variable** is an abstraction of a storage location that has a value
+we translate variable into machine concepts
+
+Def. the **extent** of a variable **instance** is the time interval
+in which its value can be accessed
+
+e.g. global variable -> entire execution of the program procedure
+
+local variable -> one execution of procedure
+
+e.g. 
+```scala
+def fact(x:Int): Int = if(x < 2) 1 else x * fact(x - 1) 
+fact(3) = 3 * fact(2) = 3 * 2 * fact(1) = 3 * 2 * 1
+```
+
+Where is variable x? 
+There is only one variable x but there are three instances at runtime
+
+We can implement this with a stack.
+We'll put the start of the stack at the end of memory. When we push we'll use lower addresses and when we pop we'll use higher.
+
+Stack:
+
+- designate storage register to store address of top of stack (**stack pointer**)
+- push a word 
+    - decrease stack pointer by 4
+- pop a word 
+    - increase stack pointer by 4
+- by convention Reg(30) stores the stack pointer (sp)
+- $30 is initialized to the end of memory
+
 
 
 
